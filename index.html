@@ -419,7 +419,7 @@
 <h3 id="2-基础篇"><a href="#2-基础篇" class="headerlink" title="2.基础篇"></a>2.基础篇</h3><p>基础篇推荐看<a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">Z皓同学</a>的这篇教程，简洁精炼。</p>
 <p><font color="#A52A2A" size="4">注意！</font></p>
 <ul>
-<li>第六步里配置里的 repository: git 和 branch: master 这两个都没有加空格 注意中间的空格！否则hexo d 部署时会没有任何反应。hexo配置文件的所有配置项和值之间都有一个空格，忽略了空格就会报错。</li>
+<li>第六步里配置里的 repository: git 和 branch: master 这两个一定要加空格，注意中间的空格！否则hexo d 部署时会没有任何反应。hexo配置文件的所有配置项和值之间都有一个空格，忽略了空格就会报错。</li>
 <li>第五步中，<code>输入cd ~/.ssh，检查是否由.ssh的文件夹</code>,这一步，若不能正常进入~/.ssh文件夹，不要慌，先跳过去，先执行<code>ssh-keygen -t rsa -C “929762930@qq.com”</code>，再返回来执行<code>cd ~/.ssh</code>  </li>
 <li><p>发布新文章的方法： （在本地博客根目录下打开命令行）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new  post &quot;你的博客名字&quot;   //sourde文件夹下的_posts文件夹中生成md文件，然后用markdown编辑器编辑文章，并保存为utf-8格式</span><br></pre></td></tr></table></figure>
