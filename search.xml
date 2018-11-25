@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[第一篇博客]]></title>
+    <url>%2F2018%2F11%2F24%2F%E4%BD%A0%E5%A5%BD%EF%BC%8CHexo%2F</url>
+    <content type="text"><![CDATA[这是小章同学的第一篇博客！]]></content>
+      <categories>
+        <category>搭建博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>
