@@ -410,13 +410,13 @@
 <p>由于搭建过程主要是通过操作命令行和修改配置文件来完成的，所以对语法的要求特别严格，少一个空格都不行，一点点不细心就会冒出很多让人头大的错误，所以一定要细心慢慢来。</p>
 <p>网上关Hexo+Github的博客搭建教良莠不齐，有的跳过了某个重要步骤，有的太过复杂，对于第一次接触命令行和github的新手可能头都要大了。</p>
 <p>所以我就综合了各位前辈的博客，总结了这份教程清单。由于前辈写的已经非常细致了，本篇文章不做重复性总结了，仅补充一些前辈漏写的注意点。希望能对各位同学有所帮助。</p>
-<h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h1><h3 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1.环境搭建"></a>1.环境搭建</h3><ul>
+<h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h1><h5 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1.环境搭建"></a>1.环境搭建</h5><ul>
 <li><p>安装node.js ，<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js下载地址</a></p>
 </li>
 <li><p>安装git，<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git下载地址</a></p>
 </li>
 </ul>
-<h3 id="2-基础篇"><a href="#2-基础篇" class="headerlink" title="2.基础篇"></a>2.基础篇</h3><p>基础篇推荐看<a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">Z皓同学</a>的这篇教程，简洁精炼。</p>
+<h5 id="2-上手操作"><a href="#2-上手操作" class="headerlink" title="2.上手操作"></a>2.上手操作</h5><p>基础篇推荐看<a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">Z皓同学</a>的这篇教程，简洁精炼。</p>
 <p><font color="#A52A2A" size="4">注意！</font></p>
 <ul>
 <li>第六步里配置里的 repository: git 和 branch: master 这两个一定要加空格，注意中间的空格！否则hexo d 部署时会没有任何反应。hexo配置文件的所有配置项和值之间都有一个空格，忽略了空格就会报错。</li>
@@ -437,16 +437,17 @@
  用记事本打开本地的博客文件“xxx.md”，然后点“另存为”，“编码(E):”选择“UTF-8”，
 </code></pre><p>点击“保存”，替换原文件。</p>
 <pre><code>2.重新生成，部署，博客乱码即消除。  
-</code></pre><h3 id="3-进阶篇"><a href="#3-进阶篇" class="headerlink" title="3.进阶篇"></a>3.进阶篇</h3><h5 id="进阶篇依然推荐Z皓同学的后续教程。"><a href="#进阶篇依然推荐Z皓同学的后续教程。" class="headerlink" title="进阶篇依然推荐Z皓同学的后续教程。"></a>进阶篇依然推荐<a href="https://www.cnblogs.com/fengxiongZz/p/7707568.html" target="_blank" rel="noopener">Z皓同学</a>的后续教程。</h5><p><font color="#A52A2A" size="4">注意！</font></p>
+</code></pre><h1 id="进阶篇"><a href="#进阶篇" class="headerlink" title="进阶篇"></a>进阶篇</h1><h5 id="1-上手操作"><a href="#1-上手操作" class="headerlink" title="1.上手操作"></a>1.上手操作</h5><p>进阶篇依然推荐<a href="https://www.cnblogs.com/fengxiongZz/p/7707568.html" target="_blank" rel="noopener">Z皓同学</a>的后续教程。</p>
+<p><font color="#A52A2A" size="4">注意！</font></p>
 <ul>
 <li>在配置文件的配置项前加上<code>#</code>就代表关闭该项配置，删掉<code>#</code>就代表开启该项配置。（同样需要注意配置项和值之间的空格问题）  </li>
 </ul>
 <p>如：  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">#scheme: Gemini</span><br></pre></td></tr></table></figure>
-<h5 id="关于评论系统"><a href="#关于评论系统" class="headerlink" title="关于评论系统"></a>关于评论系统</h5><blockquote>
+<h5 id="2-关于评论系统"><a href="#2-关于评论系统" class="headerlink" title="2.关于评论系统"></a>2.关于评论系统</h5><blockquote>
 <p>现在博客可以采用社会化评论系统啦，数据存储在云端，安全又便捷。多说关闭之后，其实还有好多评论，友言、畅言、来比力、disqus、HyperComments、Gitment。<br>来比力的微信登陆在手机端会失灵，HyperComments俄罗斯出的服务不太稳，畅言得备案才行，Gitment移动端适配不好，等等问题。最终推荐<a href="https://yunhao.space/2018/07/04/hexo-next-gitalk-comments-tutor/" target="_blank" rel="noopener">Gitalk</a>和<a href="https://ioliu.cn/2017/add-valine-comments-to-your-blog/" target="_blank" rel="noopener">Valine</a>(我选择的是Valine,因为可以匿名评论)</p>
 </blockquote>
-<h5 id="其他个性化配置请参考WenBo丨星空灬"><a href="#其他个性化配置请参考WenBo丨星空灬" class="headerlink" title="其他个性化配置请参考WenBo丨星空灬"></a>其他个性化配置请参考<a href="https://www.cnblogs.com/fengxiongZz/p/7707568.html" target="_blank" rel="noopener">WenBo丨星空灬</a></h5><blockquote>
+<h5 id="3-其他个性化配置请参考WenBo丨星空灬"><a href="#3-其他个性化配置请参考WenBo丨星空灬" class="headerlink" title="3.其他个性化配置请参考WenBo丨星空灬"></a>3.其他个性化配置请参考<a href="https://www.cnblogs.com/fengxiongZz/p/7707568.html" target="_blank" rel="noopener">WenBo丨星空灬</a></h5><blockquote>
 </blockquote>
 <ul>
 <li>切换主题</li>
