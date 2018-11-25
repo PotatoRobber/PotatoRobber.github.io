@@ -12,11 +12,11 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[��һƪ����]]></title>
+    <title><![CDATA[第一篇博客]]></title>
     <url>%2F2018%2F11%2F24%2F%E4%BD%A0%E5%A5%BD%EF%BC%8CHexo%2F</url>
-    <content type="text"><![CDATA[ǰ�� ��һ��д���ͣ��е㼤���������� �������������Դ�����һֱ����д�㶫������ʱ�ܽᣬ������䡣���Ǿ�����ĩ��hexo��githubpages�����������������ӭ��ҳ�����ѽ�������� hellozj.com ˽�Ź���������½�����ͼ�꣬����ֱ�ӷ���Ϣ���ҵ�΢��Ŷ�����ֻ����û���˫��ͼ�꣩ ���۹����������۹���Ҳ������]]></content>
+    <content type="text"><![CDATA[前言 第一次写博客，有点激动哈哈哈！ 由于老年人忘性大，所以一直很想写点东西，及时总结，方便回忆。于是就在周末用hexo和githubpages搭了这个博客啦，欢迎大家常来玩呀，域名是 hellozj.com 私信功能点击右下角聊天图标，可以直接发消息给我的微信哦！（手机端用户请双击图标） 评论功能文章评论功能也开放啦]]></content>
       <categories>
-        <category>�����</category>
+        <category>搭建博客</category>
       </categories>
       <tags>
         <tag>hexo</tag>
