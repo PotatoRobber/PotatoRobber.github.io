@@ -391,15 +391,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">章健</span>
 
-<div class="powered-by">
-&nbsp;<i class="fa fa-user-md"></i>&nbsp;<span id="busuanzi_container_site_uv">
-  本站访客数:<span id="busuanzi_value_site_uv"></span>
-</span>
-</div>
 
-<span id="busuanzi_container_site_pv">
-    本站总访问量<span id="busuanzi_value_site_pv"></span>次
-</span>
 
   
 </div>
@@ -558,6 +550,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'VLplHybK2dkWziFRvcsqWBJ4-gzGzoHsz',
+        appKey: 'GNfYW0DHJgD2a0az5g3d2N8u',
+        placeholder: '可以免登录直接评论哦！',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
