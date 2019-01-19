@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="React特点与angular和vue相同，在react中，开发者无需关注繁琐的dom操作，只需关注数据。当数据发生变化，React会自动根据数据渲染页面，这和以往的开发模式完全不同，非常便捷。 同时，React是组件化编程，一个页面是由若干组件构成。每个组件相互独立，具备独立的表现、样式和功能，复用性很强，也易于构建和维护复杂的大型项目 实现Todolist1.主要功能 用户输入待办事项，点击添">
+<meta name="description" content="React特点与angular和vue相同，在react中，开发者无需关注繁琐的dom操作，只需关注数据。当数据发生变化，React会自动根据数据渲染页面，这和以往的开发模式完全不同，非常便捷。 同时，React是组件化编程，一个页面是由若干组件构成。每个组件相互独立，具备独立的表现、样式和功能，复用性很强，也易于构建和维护复杂的大型项目 实现Todolist基本功能1.主要功能  用户输入待办事">
 <meta name="keywords" content="React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React实现todolist">
+<meta property="og:title" content="React实现todolist（一）">
 <meta property="og:url" content="http://yoursite.com/2019/01/18/React实现Todolist/index.html">
 <meta property="og:site_name" content="zhangjian">
-<meta property="og:description" content="React特点与angular和vue相同，在react中，开发者无需关注繁琐的dom操作，只需关注数据。当数据发生变化，React会自动根据数据渲染页面，这和以往的开发模式完全不同，非常便捷。 同时，React是组件化编程，一个页面是由若干组件构成。每个组件相互独立，具备独立的表现、样式和功能，复用性很强，也易于构建和维护复杂的大型项目 实现Todolist1.主要功能 用户输入待办事项，点击添">
+<meta property="og:description" content="React特点与angular和vue相同，在react中，开发者无需关注繁琐的dom操作，只需关注数据。当数据发生变化，React会自动根据数据渲染页面，这和以往的开发模式完全不同，非常便捷。 同时，React是组件化编程，一个页面是由若干组件构成。每个组件相互独立，具备独立的表现、样式和功能，复用性很强，也易于构建和维护复杂的大型项目 实现Todolist基本功能1.主要功能  用户输入待办事">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-18T13:53:54.834Z">
+<meta property="og:image" content="https://hexo-1256414934.cos.ap-chengdu.myqcloud.com/Animation.gif">
+<meta property="og:updated_time" content="2019-01-19T07:24:18.310Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React实现todolist">
-<meta name="twitter:description" content="React特点与angular和vue相同，在react中，开发者无需关注繁琐的dom操作，只需关注数据。当数据发生变化，React会自动根据数据渲染页面，这和以往的开发模式完全不同，非常便捷。 同时，React是组件化编程，一个页面是由若干组件构成。每个组件相互独立，具备独立的表现、样式和功能，复用性很强，也易于构建和维护复杂的大型项目 实现Todolist1.主要功能 用户输入待办事项，点击添">
+<meta name="twitter:title" content="React实现todolist（一）">
+<meta name="twitter:description" content="React特点与angular和vue相同，在react中，开发者无需关注繁琐的dom操作，只需关注数据。当数据发生变化，React会自动根据数据渲染页面，这和以往的开发模式完全不同，非常便捷。 同时，React是组件化编程，一个页面是由若干组件构成。每个组件相互独立，具备独立的表现、样式和功能，复用性很强，也易于构建和维护复杂的大型项目 实现Todolist基本功能1.主要功能  用户输入待办事">
+<meta name="twitter:image" content="https://hexo-1256414934.cos.ap-chengdu.myqcloud.com/Animation.gif">
 
 
 
@@ -126,7 +128,7 @@
 
 
 
-  <title>React实现todolist | zhangjian</title>
+  <title>React实现todolist（一） | zhangjian</title>
   
 
 
@@ -321,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">React实现todolist</h1>
+          <h1 class="post-title" itemprop="name headline">React实现todolist（一）</h1>
         
 
         <div class="post-meta">
@@ -405,7 +407,8 @@
       
         <h1 id="React特点"><a href="#React特点" class="headerlink" title="React特点"></a>React特点</h1><p>与angular和vue相同，在react中，开发者无需关注繁琐的dom操作，只需关注数据。当数据发生变化，React会自动根据数据渲染页面，这和以往的开发模式完全不同，非常便捷。</p>
 <p>同时，React是组件化编程，一个页面是由若干组件构成。每个组件相互独立，具备独立的表现、样式和功能，复用性很强，也易于构建和维护复杂的大型项目</p>
-<h1 id="实现Todolist"><a href="#实现Todolist" class="headerlink" title="实现Todolist"></a>实现Todolist</h1><h3 id="1-主要功能"><a href="#1-主要功能" class="headerlink" title="1.主要功能"></a>1.主要功能</h3><ul>
+<h1 id="实现Todolist基本功能"><a href="#实现Todolist基本功能" class="headerlink" title="实现Todolist基本功能"></a>实现Todolist基本功能</h1><h3 id="1-主要功能"><a href="#1-主要功能" class="headerlink" title="1.主要功能"></a>1.主要功能</h3><p><img src="https://hexo-1256414934.cos.ap-chengdu.myqcloud.com/Animation.gif" alt="Image text"></p>
+<ul>
 <li>用户输入待办事项，点击添加，刚才输入的待办事项就会添加到事件列表中</li>
 <li>点击列表中的事件名，就会消除该事件，表示已完成。 </li>
 </ul>
@@ -624,7 +627,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React特点"><span class="nav-number">1.</span> <span class="nav-text">React特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现Todolist"><span class="nav-number">2.</span> <span class="nav-text">实现Todolist</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-主要功能"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.主要功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-实现思路"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.实现思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Todolist组件源码"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.Todolist组件源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-分步拆解"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.分步拆解</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#感悟"><span class="nav-number">3.</span> <span class="nav-text">感悟</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React特点"><span class="nav-number">1.</span> <span class="nav-text">React特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现Todolist基本功能"><span class="nav-number">2.</span> <span class="nav-text">实现Todolist基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-主要功能"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.主要功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-实现思路"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.实现思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Todolist组件源码"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.Todolist组件源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-分步拆解"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.分步拆解</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#感悟"><span class="nav-number">3.</span> <span class="nav-text">感悟</span></a></li></div>
             
 
           </div>
