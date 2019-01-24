@@ -300,6 +300,198 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/24/react生命周期函数/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhangjian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhangjian">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/24/react生命周期函数/" itemprop="url">React生命周期函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-24T17:00:50+08:00">
+                2019-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/24/react生命周期函数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/24/react生命周期函数/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="生命周期函数定义"><a href="#生命周期函数定义" class="headerlink" title="生命周期函数定义"></a>生命周期函数定义</h1><p>生命周期函数是指在<strong>某一个时刻</strong>，组件会<strong>自动</strong>调用执行的函数</p>
+<h1 id="生命周期函数都有哪些？"><a href="#生命周期函数都有哪些？" class="headerlink" title="生命周期函数都有哪些？"></a>生命周期函数都有哪些？</h1><p><img src="/2019/01/24/react生命周期函数/1.jpg" alt="Image text"></p>
+<p>在React中，有一个生命周期函数我们之前就已经见过很多次了，就是render函数。根据定义，生命周期函数是指在某一个时刻，组件会自动调用执行的函数。</p>
+<p>还记得上一篇“React实现TodoList”的文章中提到，每当state和props中的数据发生改变，render函数就会被自动的调用并重新执行。</p>
+<h1 id="优化Todolist代码，拆分组件"><a href="#优化Todolist代码，拆分组件" class="headerlink" title="优化Todolist代码，拆分组件"></a>优化Todolist代码，拆分组件</h1><blockquote>
+<p>由于上一篇文章为了方便理解，整个程序只有一个Todolist组件，这样做其实并不提倡，所以为了更好的演示，我们先做下组件拆分，最外层组件是TodoList，里面嵌套TodoItem组件，用于实现待办事件列表功能。</p>
+</blockquote>
+<p><code>TodoList组件</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123;Component,Fragment&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> TodoItem <span class="keyword">from</span> <span class="string">'./TodoItem'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">		<span class="keyword">super</span>(props);</span><br><span class="line">		<span class="keyword">this</span>.state = &#123;</span><br><span class="line">			inputValue:<span class="string">''</span>,</span><br><span class="line">			list:[]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'render'</span>);</span><br><span class="line">		<span class="keyword">return</span>(</span><br><span class="line">			&lt;Fragment&gt;</span><br><span class="line">				&lt;div&gt;&lt;input value=&#123;this.state.inputValue&#125; onChange=&#123;this.handleInputChange.bind(this)&#125;/&gt;&lt;button onClick=&#123;this.handleBtnClick.bind(this)&#125;&gt;添加&lt;/button&gt;&lt;/div&gt;</span><br><span class="line">				&lt;ul&gt;</span><br><span class="line">					&#123;</span><br><span class="line">						<span class="keyword">this</span>.state.list.map(<span class="function">(<span class="params">item,index</span>)=&gt;</span>&#123;</span><br><span class="line">								<span class="keyword">return</span> (</span><br><span class="line">										&lt;TodoItem</span><br><span class="line">											key=&#123;index&#125;</span><br><span class="line">											content=&#123;item&#125;</span><br><span class="line">											index=&#123;index&#125;</span><br><span class="line">											deleteItem=&#123;<span class="keyword">this</span>.handleItemDelete.bind(<span class="keyword">this</span>)&#125;/&gt;</span><br><span class="line">										)</span><br><span class="line">						&#125;)</span><br><span class="line">					&#125;</span><br><span class="line">				&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">			&lt;/</span>Fragment&gt;</span><br><span class="line">			)</span><br><span class="line">	&#125; </span><br><span class="line"></span><br><span class="line">	handleInputChange(e)&#123;</span><br><span class="line">		<span class="keyword">this</span>.setState(&#123;</span><br><span class="line">			inputValue:e.target.value</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleBtnClick()&#123;</span><br><span class="line">		<span class="keyword">this</span>.setState(&#123;</span><br><span class="line">			list:[...this.state.list,<span class="keyword">this</span>.state.inputValue],</span><br><span class="line">			inputValue:<span class="string">''</span></span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleItemDelete(index)&#123;</span><br><span class="line">		<span class="keyword">const</span> list = <span class="keyword">this</span>.state.list;</span><br><span class="line">		list.splice(index,<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.setState(&#123;</span><br><span class="line">			list:list</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	componentWillMount()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'componentWillMount'</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	componentDidMount()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'componentDidMount'</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList;</span><br></pre></td></tr></table></figure>
+<p><code>TodoItem组件</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React ,&#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoItem</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">		<span class="keyword">super</span>(props);</span><br><span class="line">		<span class="keyword">this</span>.handleClick = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render()&#123;</span><br><span class="line">		<span class="keyword">return</span>(</span><br><span class="line">			&lt;div onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt;</span><br><span class="line">				&#123;<span class="keyword">this</span>.props.content&#125;</span><br><span class="line">			&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">		)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	handleClick()&#123;</span></span><br><span class="line"><span class="regexp">		this.props.deleteItem(this.props.index);</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	componentWillReceiveProps()&#123;</span></span><br><span class="line"><span class="regexp">		console.log("componentWillReceiveProps");</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	componentWillUnmount()&#123;</span></span><br><span class="line"><span class="regexp">		console.log("componentWillUnmount");</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default TodoItem;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="生命周期函数详解"><a href="#生命周期函数详解" class="headerlink" title="生命周期函数详解"></a>生命周期函数详解</h1><blockquote>
+<p>我们在每个生命周期函数里都写一句console.log()，通过控制台观察执行顺序</p>
+</blockquote>
+<h2 id="Initialzation阶段"><a href="#Initialzation阶段" class="headerlink" title="Initialzation阶段"></a>Initialzation阶段</h2><blockquote>
+<p>初始化阶段，初始化props 和 state</p>
+</blockquote>
+<p>每个组件都有一个constructor构造函数，这就是Initialzation阶段啦，意为初始化。constructor函数，在组件一被创建的时候，就被自动调用了，所以它是生命周期函数。</p>
+<h2 id="Mounting阶段"><a href="#Mounting阶段" class="headerlink" title="Mounting阶段"></a>Mounting阶段</h2><blockquote>
+<p>Mounting就是挂载的意思。初始化后，一个组件需要被渲染，然后挂载到页面之上。</p>
+</blockquote>
+<p><img src="/2019/01/24/react生命周期函数/2.gif" alt="Image text"></p>
+<h3 id="componentWillMount"><a href="#componentWillMount" class="headerlink" title="componentWillMount"></a>componentWillMount</h3><p>在组件被<strong>挂载</strong>到页面<strong>之前</strong>自动执行</p>
+<h3 id="render"><a href="#render" class="headerlink" title="render"></a>render</h3><p>组件渲染并<strong>挂载</strong>到页面<strong>之上</strong>时自动执行</p>
+<h3 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount"></a>componentDidMount</h3><p>在组件被<strong>挂载</strong>到页面<strong>之后</strong>自动执行</p>
+<blockquote>
+<p><font color="#A52A2A" size="3">注意！</font><br>componentWillMount和componentDidMount只在组件第一次被挂载的时候执行一次。如下图所示，当我们再次输入内容，只有render函数执行。</p>
+</blockquote>
+<p><img src="/2019/01/24/react生命周期函数/3.gif" alt="Image text"></p>
+<h2 id="updation阶段"><a href="#updation阶段" class="headerlink" title="updation阶段"></a>updation阶段</h2><blockquote>
+<p>updation意为更新，指state或者props发生变化。如一开始的生命周期函数图所示，props和state对应的生命周期函数，唯一的不同就是props多了一个componentWillReceiveProps，其他都一样。我们先讲它们共同的生命周期函数</p>
+</blockquote>
+<h3 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate"></a>shouldComponentUpdate</h3><p>组件被<strong>更新之前</strong>，自动执行。shouldComponentUpdate可被理解为“shouldComponentUpdate？”，“组件应该被更新吗？”。它要求必须返回一个布尔值，返回true,则允许组件被更新，返回false，则禁止组件被更新，同时不会执行它下面的关于更新的生命周期函数。</p>
+<h3 id="componentWillUpdate"><a href="#componentWillUpdate" class="headerlink" title="componentWillUpdate"></a>componentWillUpdate</h3><p>组件被<strong>更新之前</strong>，自动执行，但顺序位于shouldComponentUpdate之后</p>
+<h3 id="render-1"><a href="#render-1" class="headerlink" title="render"></a>render</h3><p>重新渲染虚拟DOM，更新页面</p>
+<h3 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate"></a>componentDidUpdate</h3><p>组件被<strong>更新之后</strong>，会自动被执行</p>
+<h3 id="componentWillReceiveProps"><a href="#componentWillReceiveProps" class="headerlink" title="componentWillReceiveProps"></a>componentWillReceiveProps</h3><p>这个生命周期函数要被执行，需要满足两个条件</p>
+<ul>
+<li>必须从父组件接收props参数</li>
+<li>如果这个组件第一次存在于父组件，不会执行。如果这个组件之前已经存在于父组件，才会执行。<br><img src="/2019/01/24/react生命周期函数/4.gif" alt="Image text"></li>
+</ul>
+<h1 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount"></a>componentWillUnmount</h1><p>组件即将被从页面中剔除的时候，自动执行<br><img src="/2019/01/24/react生命周期函数/5.gif" alt="Image text"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/24/React中的虚拟DOM/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -581,198 +773,6 @@
 </li>
 </ul>
 <h1 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h1><p>react,vue,angular,微信小程序，都强调数据，数据发生变化，页面就会自动渲染。vue具有双向绑定的特点，react是单向绑定。vue的语法更优雅简洁，但是不如react的jsx灵活自由。二者的思想都强调数据和组件化。微信小程序架构清晰，是按页面来组织代码的，每个页面有自己的wxml,wxss,js,json，但缺乏组件化编程思想，构建复杂项目还是比较吃力的，不过小程序的定位本来就是小型程序，所以也无可厚非。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/18/react生命周期函数/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhangjian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zhangjian">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/18/react生命周期函数/" itemprop="url">React实现todolist（一）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-18T17:00:50+08:00">
-                2019-01-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/React/" itemprop="url" rel="index">
-                    <span itemprop="name">React</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/18/react生命周期函数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/18/react生命周期函数/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="生命周期函数定义"><a href="#生命周期函数定义" class="headerlink" title="生命周期函数定义"></a>生命周期函数定义</h1><p>生命周期函数是指在<strong>某一个时刻</strong>，组件会<strong>自动</strong>调用执行的函数</p>
-<h1 id="生命周期函数都有哪些？"><a href="#生命周期函数都有哪些？" class="headerlink" title="生命周期函数都有哪些？"></a>生命周期函数都有哪些？</h1><p><img src="/2019/01/18/react生命周期函数/1.jpg" alt="Image text"></p>
-<p>在React中，有一个生命周期函数我们之前就已经见过很多次了，就是render函数。根据定义，生命周期函数是指在某一个时刻，组件会自动调用执行的函数。</p>
-<p>还记得上一篇“React实现TodoList”的文章中提到，每当state和props中的数据发生改变，render函数就会被自动的调用并重新执行。</p>
-<h1 id="优化Todolist代码，拆分组件"><a href="#优化Todolist代码，拆分组件" class="headerlink" title="优化Todolist代码，拆分组件"></a>优化Todolist代码，拆分组件</h1><blockquote>
-<p>由于上一篇文章为了方便理解，整个程序只有一个Todolist组件，这样做其实并不提倡，所以为了更好的演示，我们先做下组件拆分，最外层组件是TodoList，里面嵌套TodoItem组件，用于实现待办事件列表功能。</p>
-</blockquote>
-<p><code>TodoList组件</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123;Component,Fragment&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> TodoItem <span class="keyword">from</span> <span class="string">'./TodoItem'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">		<span class="keyword">super</span>(props);</span><br><span class="line">		<span class="keyword">this</span>.state = &#123;</span><br><span class="line">			inputValue:<span class="string">''</span>,</span><br><span class="line">			list:[]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'render'</span>);</span><br><span class="line">		<span class="keyword">return</span>(</span><br><span class="line">			&lt;Fragment&gt;</span><br><span class="line">				&lt;div&gt;&lt;input value=&#123;this.state.inputValue&#125; onChange=&#123;this.handleInputChange.bind(this)&#125;/&gt;&lt;button onClick=&#123;this.handleBtnClick.bind(this)&#125;&gt;添加&lt;/button&gt;&lt;/div&gt;</span><br><span class="line">				&lt;ul&gt;</span><br><span class="line">					&#123;</span><br><span class="line">						<span class="keyword">this</span>.state.list.map(<span class="function">(<span class="params">item,index</span>)=&gt;</span>&#123;</span><br><span class="line">								<span class="keyword">return</span> (</span><br><span class="line">										&lt;TodoItem</span><br><span class="line">											key=&#123;index&#125;</span><br><span class="line">											content=&#123;item&#125;</span><br><span class="line">											index=&#123;index&#125;</span><br><span class="line">											deleteItem=&#123;<span class="keyword">this</span>.handleItemDelete.bind(<span class="keyword">this</span>)&#125;/&gt;</span><br><span class="line">										)</span><br><span class="line">						&#125;)</span><br><span class="line">					&#125;</span><br><span class="line">				&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">			&lt;/</span>Fragment&gt;</span><br><span class="line">			)</span><br><span class="line">	&#125; </span><br><span class="line"></span><br><span class="line">	handleInputChange(e)&#123;</span><br><span class="line">		<span class="keyword">this</span>.setState(&#123;</span><br><span class="line">			inputValue:e.target.value</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleBtnClick()&#123;</span><br><span class="line">		<span class="keyword">this</span>.setState(&#123;</span><br><span class="line">			list:[...this.state.list,<span class="keyword">this</span>.state.inputValue],</span><br><span class="line">			inputValue:<span class="string">''</span></span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleItemDelete(index)&#123;</span><br><span class="line">		<span class="keyword">const</span> list = <span class="keyword">this</span>.state.list;</span><br><span class="line">		list.splice(index,<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.setState(&#123;</span><br><span class="line">			list:list</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	componentWillMount()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'componentWillMount'</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	componentDidMount()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'componentDidMount'</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList;</span><br></pre></td></tr></table></figure>
-<p><code>TodoItem组件</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React ,&#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoItem</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">		<span class="keyword">super</span>(props);</span><br><span class="line">		<span class="keyword">this</span>.handleClick = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render()&#123;</span><br><span class="line">		<span class="keyword">return</span>(</span><br><span class="line">			&lt;div onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt;</span><br><span class="line">				&#123;<span class="keyword">this</span>.props.content&#125;</span><br><span class="line">			&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">		)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	handleClick()&#123;</span></span><br><span class="line"><span class="regexp">		this.props.deleteItem(this.props.index);</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	componentWillReceiveProps()&#123;</span></span><br><span class="line"><span class="regexp">		console.log("componentWillReceiveProps");</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	componentWillUnmount()&#123;</span></span><br><span class="line"><span class="regexp">		console.log("componentWillUnmount");</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default TodoItem;</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="生命周期函数详解"><a href="#生命周期函数详解" class="headerlink" title="生命周期函数详解"></a>生命周期函数详解</h1><blockquote>
-<p>我们在每个生命周期函数里都写一句console.log()，通过控制台观察执行顺序</p>
-</blockquote>
-<h2 id="Initialzation阶段"><a href="#Initialzation阶段" class="headerlink" title="Initialzation阶段"></a>Initialzation阶段</h2><blockquote>
-<p>初始化阶段，初始化props 和 state</p>
-</blockquote>
-<p>每个组件都有一个constructor构造函数，这就是Initialzation阶段啦，意为初始化。constructor函数，在组件一被创建的时候，就被自动调用了，所以它是生命周期函数。</p>
-<h2 id="Mounting阶段"><a href="#Mounting阶段" class="headerlink" title="Mounting阶段"></a>Mounting阶段</h2><blockquote>
-<p>Mounting就是挂载的意思。初始化后，一个组件需要被渲染，然后挂载到页面之上。</p>
-</blockquote>
-<p><img src="/2019/01/18/react生命周期函数/2.gif" alt="Image text"></p>
-<h3 id="componentWillMount"><a href="#componentWillMount" class="headerlink" title="componentWillMount"></a>componentWillMount</h3><p>在组件被<strong>挂载</strong>到页面<strong>之前</strong>自动执行</p>
-<h3 id="render"><a href="#render" class="headerlink" title="render"></a>render</h3><p>组件渲染并<strong>挂载</strong>到页面<strong>之上</strong>时自动执行</p>
-<h3 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount"></a>componentDidMount</h3><p>在组件被<strong>挂载</strong>到页面<strong>之后</strong>自动执行</p>
-<blockquote>
-<p><font color="#A52A2A" size="3">注意！</font><br>componentWillMount和componentDidMount只在组件第一次被挂载的时候执行一次。如下图所示，当我们再次输入内容，只有render函数执行。</p>
-</blockquote>
-<p><img src="/2019/01/18/react生命周期函数/3.gif" alt="Image text"></p>
-<h2 id="updation阶段"><a href="#updation阶段" class="headerlink" title="updation阶段"></a>updation阶段</h2><blockquote>
-<p>updation意为更新，指state或者props发生变化。如一开始的生命周期函数图所示，props和state对应的生命周期函数，唯一的不同就是props多了一个componentWillReceiveProps，其他都一样。我们先讲它们共同的生命周期函数</p>
-</blockquote>
-<h3 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate"></a>shouldComponentUpdate</h3><p>组件被<strong>更新之前</strong>，自动执行。shouldComponentUpdate可被理解为“shouldComponentUpdate？”，“组件应该被更新吗？”。它要求必须返回一个布尔值，返回true,则允许组件被更新，返回false，则禁止组件被更新，同时不会执行它下面的关于更新的生命周期函数。</p>
-<h3 id="componentWillUpdate"><a href="#componentWillUpdate" class="headerlink" title="componentWillUpdate"></a>componentWillUpdate</h3><p>组件被<strong>更新之前</strong>，自动执行，但顺序位于shouldComponentUpdate之后</p>
-<h3 id="render-1"><a href="#render-1" class="headerlink" title="render"></a>render</h3><p>重新渲染虚拟DOM，更新页面</p>
-<h3 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate"></a>componentDidUpdate</h3><p>组件被<strong>更新之后</strong>，会自动被执行</p>
-<h3 id="componentWillReceiveProps"><a href="#componentWillReceiveProps" class="headerlink" title="componentWillReceiveProps"></a>componentWillReceiveProps</h3><p>这个生命周期函数要被执行，需要满足两个条件</p>
-<ul>
-<li>必须从父组件接收props参数</li>
-<li>如果这个组件第一次存在于父组件，不会执行。如果这个组件之前已经存在于父组件，才会执行。<br><img src="/2019/01/18/react生命周期函数/4.gif" alt="Image text"></li>
-</ul>
-<h1 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount"></a>componentWillUnmount</h1><p>组件即将被从页面中剔除的时候，自动执行<br><img src="/2019/01/18/react生命周期函数/5.gif" alt="Image text"></p>
 
           
         
