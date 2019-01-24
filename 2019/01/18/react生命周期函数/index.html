@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hexo,">
+  <meta name="keywords" content="React,">
 
 
 
@@ -79,18 +79,24 @@
 
 
 
-<meta name="description" content="我的电脑系统：win10 64位  前言Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和coding上，是搭建博客的首选框架。   由于搭建过程主要是通过操作命令行和修改配置文件来完成的，所以对语法的要求特别严格，少一个空格都不行，一点点不细心就会冒出很多让人头大的错误，所以一定要细心慢慢来。 网上关Hexo+Github的博客搭建教">
-<meta name="keywords" content="hexo">
+<meta name="description" content="生命周期函数定义生命周期函数是指在某一个时刻，组件会自动调用执行的函数 生命周期函数都有哪些？ 在React中，有一个生命周期函数我们之前就已经见过很多次了，就是render函数。根据定义，生命周期函数是指在某一个时刻，组件会自动调用执行的函数。 还记得上一篇“React实现TodoList”的文章中提到，每当state和props中的数据发生改变，render函数就会被自动的调用并重新执行。 优">
+<meta name="keywords" content="React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo+githubpages搭建个人博客的教程">
-<meta property="og:url" content="http://yoursite.com/2018/11/25/Hexo+githubpages搭建个人博客的教程/index.html">
+<meta property="og:title" content="React实现todolist（一）">
+<meta property="og:url" content="http://yoursite.com/2019/01/18/react生命周期函数/index.html">
 <meta property="og:site_name" content="zhangjian">
-<meta property="og:description" content="我的电脑系统：win10 64位  前言Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和coding上，是搭建博客的首选框架。   由于搭建过程主要是通过操作命令行和修改配置文件来完成的，所以对语法的要求特别严格，少一个空格都不行，一点点不细心就会冒出很多让人头大的错误，所以一定要细心慢慢来。 网上关Hexo+Github的博客搭建教">
+<meta property="og:description" content="生命周期函数定义生命周期函数是指在某一个时刻，组件会自动调用执行的函数 生命周期函数都有哪些？ 在React中，有一个生命周期函数我们之前就已经见过很多次了，就是render函数。根据定义，生命周期函数是指在某一个时刻，组件会自动调用执行的函数。 还记得上一篇“React实现TodoList”的文章中提到，每当state和props中的数据发生改变，render函数就会被自动的调用并重新执行。 优">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-18T03:56:42.842Z">
+<meta property="og:image" content="http://yoursite.com/2019/01/18/react生命周期函数/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/01/18/react生命周期函数/2.gif">
+<meta property="og:image" content="http://yoursite.com/2019/01/18/react生命周期函数/3.gif">
+<meta property="og:image" content="http://yoursite.com/2019/01/18/react生命周期函数/4.gif">
+<meta property="og:image" content="http://yoursite.com/2019/01/18/react生命周期函数/5.gif">
+<meta property="og:updated_time" content="2019-01-24T05:01:32.699Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo+githubpages搭建个人博客的教程">
-<meta name="twitter:description" content="我的电脑系统：win10 64位  前言Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和coding上，是搭建博客的首选框架。   由于搭建过程主要是通过操作命令行和修改配置文件来完成的，所以对语法的要求特别严格，少一个空格都不行，一点点不细心就会冒出很多让人头大的错误，所以一定要细心慢慢来。 网上关Hexo+Github的博客搭建教">
+<meta name="twitter:title" content="React实现todolist（一）">
+<meta name="twitter:description" content="生命周期函数定义生命周期函数是指在某一个时刻，组件会自动调用执行的函数 生命周期函数都有哪些？ 在React中，有一个生命周期函数我们之前就已经见过很多次了，就是render函数。根据定义，生命周期函数是指在某一个时刻，组件会自动调用执行的函数。 还记得上一篇“React实现TodoList”的文章中提到，每当state和props中的数据发生改变，render函数就会被自动的调用并重新执行。 优">
+<meta name="twitter:image" content="http://yoursite.com/2019/01/18/react生命周期函数/1.jpg">
 
 
 
@@ -120,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/25/Hexo+githubpages搭建个人博客的教程/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/18/react生命周期函数/">
 
 
 
 
 
-  <title>Hexo+githubpages搭建个人博客的教程 | zhangjian</title>
+  <title>React实现todolist（一） | zhangjian</title>
   
 
 
@@ -304,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/25/Hexo+githubpages搭建个人博客的教程/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/18/react生命周期函数/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhangjian">
@@ -321,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo+githubpages搭建个人博客的教程</h1>
+          <h1 class="post-title" itemprop="name headline">React实现todolist（一）</h1>
         
 
         <div class="post-meta">
@@ -333,8 +339,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-25T14:57:50+08:00">
-                2018-11-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-18T17:00:50+08:00">
+                2019-01-18
               </time>
             
 
@@ -356,8 +362,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/搭建博客/" itemprop="url" rel="index">
-                    <span itemprop="name">搭建博客</span>
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
                   </a>
                 </span>
 
@@ -374,8 +380,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/25/Hexo+githubpages搭建个人博客的教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/25/Hexo+githubpages搭建个人博客的教程/" itemprop="commentCount"></span>
+                <a href="/2019/01/18/react生命周期函数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/18/react生命周期函数/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -403,85 +409,47 @@
       
 
       
-        <blockquote>
-<p>我的电脑系统：win10 64位</p>
+        <h1 id="生命周期函数定义"><a href="#生命周期函数定义" class="headerlink" title="生命周期函数定义"></a>生命周期函数定义</h1><p>生命周期函数是指在<strong>某一个时刻</strong>，组件会<strong>自动</strong>调用执行的函数</p>
+<h1 id="生命周期函数都有哪些？"><a href="#生命周期函数都有哪些？" class="headerlink" title="生命周期函数都有哪些？"></a>生命周期函数都有哪些？</h1><p><img src="/2019/01/18/react生命周期函数/1.jpg" alt="Image text"></p>
+<p>在React中，有一个生命周期函数我们之前就已经见过很多次了，就是render函数。根据定义，生命周期函数是指在某一个时刻，组件会自动调用执行的函数。</p>
+<p>还记得上一篇“React实现TodoList”的文章中提到，每当state和props中的数据发生改变，render函数就会被自动的调用并重新执行。</p>
+<h1 id="优化Todolist代码，拆分组件"><a href="#优化Todolist代码，拆分组件" class="headerlink" title="优化Todolist代码，拆分组件"></a>优化Todolist代码，拆分组件</h1><blockquote>
+<p>由于上一篇文章为了方便理解，整个程序只有一个Todolist组件，这样做其实并不提倡，所以为了更好的演示，我们先做下组件拆分，最外层组件是TodoList，里面嵌套TodoItem组件，用于实现待办事件列表功能。</p>
 </blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和coding上，是搭建博客的首选框架。  </p>
-<p>由于搭建过程主要是通过操作命令行和修改配置文件来完成的，所以对语法的要求特别严格，少一个空格都不行，一点点不细心就会冒出很多让人头大的错误，所以一定要细心慢慢来。</p>
-<p>网上关Hexo+Github的博客搭建教良莠不齐，有的跳过了某个重要步骤，有的太过复杂，对于第一次接触命令行和github的新手可能头都要大了。</p>
-<p>所以我就综合了各位前辈的博客，总结了这份教程清单。由于前辈写的已经非常细致了，本篇文章不做重复性总结了，仅补充一些前辈漏写的注意点。希望能对各位同学有所帮助。</p>
-<h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h1><h5 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1.环境搭建"></a>1.环境搭建</h5><ul>
-<li><p>安装node.js ，<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js下载地址</a></p>
-</li>
-<li><p>安装git，<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git下载地址</a></p>
-</li>
-</ul>
-<h5 id="2-上手操作"><a href="#2-上手操作" class="headerlink" title="2.上手操作"></a>2.上手操作</h5><p>基础篇推荐看<a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">Z皓同学</a>的这篇教程，简洁精炼。</p>
-<p><font color="#A52A2A" size="4">注意！</font></p>
-<ul>
-<li>第六步里配置里的 repository: git 和 branch: master 这两个一定要加空格，注意中间的空格！否则hexo d 部署时会没有任何反应。hexo配置文件的所有配置项和值之间都有一个空格，忽略了空格就会报错。</li>
-<li>第五步中，<code>输入cd ~/.ssh，检查是否由.ssh的文件夹</code>,这一步，若不能正常进入~/.ssh文件夹，不要慌，先跳过去，先执行<code>ssh-keygen -t rsa -C “929762930@qq.com”</code>，再返回来执行<code>cd ~/.ssh</code>  </li>
-<li><p>发布新文章的方法： （在本地博客根目录下打开命令行）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new  post &quot;你的博客名字&quot;   //sourde文件夹下的_posts文件夹中生成md文件，然后用markdown编辑器编辑文章，并保存为utf-8格式</span><br></pre></td></tr></table></figure>
-<p>&ensp;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo cl   //clean 清理生成的文档    </span><br><span class="line">hexo g   //generate 生成静态文档</span><br><span class="line">hexo d   //deploy 部署到github</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改文章的方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo cl   //clean 清理生成的文档    </span><br><span class="line">hexo g   //generate 生成静态文档</span><br><span class="line">hexo d   //deploy 部署到github</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>博文乱码。将博客文件保存为UTF-8即可解决问题。</p>
-</li>
-</ul>
-<pre><code>1.将博客文件保存为UTF-8
-
- 用记事本打开本地的博客文件“xxx.md”，然后点“另存为”，“编码(E):”选择“UTF-8”，
-</code></pre><p>点击“保存”，替换原文件。</p>
-<pre><code>2.重新生成，部署，博客乱码即消除。  
-</code></pre><h1 id="进阶篇"><a href="#进阶篇" class="headerlink" title="进阶篇"></a>进阶篇</h1><h5 id="1-上手操作"><a href="#1-上手操作" class="headerlink" title="1.上手操作"></a>1.上手操作</h5><p>进阶篇依然推荐<a href="https://www.cnblogs.com/fengxiongZz/p/7707568.html" target="_blank" rel="noopener">Z皓同学</a>的后续教程。</p>
-<p><font color="#A52A2A" size="4">注意！</font></p>
-<ul>
-<li>在配置文件的配置项前加上<code>#</code>就代表关闭该项配置，删掉<code>#</code>就代表开启该项配置。（同样需要注意配置项和值之间的空格问题）  </li>
-</ul>
-<p>如：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">#scheme: Gemini</span><br></pre></td></tr></table></figure>
-<h5 id="2-关于评论系统"><a href="#2-关于评论系统" class="headerlink" title="2.关于评论系统"></a>2.关于评论系统</h5><blockquote>
-<p>现在博客可以采用社会化评论系统啦，数据存储在云端，安全又便捷。多说关闭之后，其实还有好多评论，友言、畅言、来比力、disqus、HyperComments、Gitment。<br>来比力的微信登陆在手机端会失灵，HyperComments俄罗斯出的服务不太稳，畅言得备案才行，Gitment移动端适配不好，等等问题。最终推荐<a href="https://yunhao.space/2018/07/04/hexo-next-gitalk-comments-tutor/" target="_blank" rel="noopener">Gitalk</a>和<a href="https://ioliu.cn/2017/add-valine-comments-to-your-blog/" target="_blank" rel="noopener">Valine</a>(我选择的是Valine,因为可以匿名评论)</p>
+<p><code>TodoList组件</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123;Component,Fragment&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> TodoItem <span class="keyword">from</span> <span class="string">'./TodoItem'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">		<span class="keyword">super</span>(props);</span><br><span class="line">		<span class="keyword">this</span>.state = &#123;</span><br><span class="line">			inputValue:<span class="string">''</span>,</span><br><span class="line">			list:[]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render()&#123;</span><br><span class="line">		<span class="keyword">return</span>(</span><br><span class="line">			&lt;Fragment&gt;</span><br><span class="line">				&lt;div&gt;&lt;input value=&#123;this.state.inputValue&#125; onChange=&#123;this.handleInputChange.bind(this)&#125;/&gt;&lt;button onClick=&#123;this.handleBtnClick.bind(this)&#125;&gt;添加&lt;/button&gt;&lt;/div&gt;</span><br><span class="line">				&lt;ul&gt;</span><br><span class="line">					&#123;</span><br><span class="line">						<span class="keyword">this</span>.state.list.map(<span class="function">(<span class="params">item,index</span>)=&gt;</span>&#123;</span><br><span class="line">								<span class="keyword">return</span> (</span><br><span class="line">										&lt;TodoItem</span><br><span class="line">											key=&#123;index&#125;</span><br><span class="line">											content=&#123;item&#125;</span><br><span class="line">											index=&#123;index&#125;</span><br><span class="line">											deleteItem=&#123;<span class="keyword">this</span>.handleItemDelete.bind(<span class="keyword">this</span>)&#125;/&gt;</span><br><span class="line">										)</span><br><span class="line">						&#125;)</span><br><span class="line">					&#125;</span><br><span class="line">				&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">			&lt;/</span>Fragment&gt;</span><br><span class="line">			)</span><br><span class="line">	&#125; </span><br><span class="line"></span><br><span class="line">	handleInputChange(e)&#123;</span><br><span class="line">		<span class="keyword">this</span>.setState(&#123;</span><br><span class="line">			inputValue:e.target.value</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleBtnClick()&#123;</span><br><span class="line">		<span class="keyword">this</span>.setState(&#123;</span><br><span class="line">			list:[...this.state.list,<span class="keyword">this</span>.state.inputValue],</span><br><span class="line">			inputValue:<span class="string">''</span></span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	handleItemDelete(index)&#123;</span><br><span class="line">		<span class="keyword">const</span> list = <span class="keyword">this</span>.state.list;</span><br><span class="line">		list.splice(index,<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.setState(&#123;</span><br><span class="line">			list:list</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList;</span><br></pre></td></tr></table></figure>
+<p><code>TodoItem组件</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React ,&#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoItem</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">		<span class="keyword">super</span>(props);</span><br><span class="line">		<span class="keyword">this</span>.handleClick = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render()&#123;</span><br><span class="line">		<span class="keyword">return</span>(</span><br><span class="line">			&lt;div onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt;</span><br><span class="line">				&#123;<span class="keyword">this</span>.props.content&#125;</span><br><span class="line">			&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">		)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	handleClick()&#123;</span></span><br><span class="line"><span class="regexp">		this.props.deleteItem(this.props.index);</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default TodoItem;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="生命周期函数详解"><a href="#生命周期函数详解" class="headerlink" title="生命周期函数详解"></a>生命周期函数详解</h1><blockquote>
+<p>我们在每个生命周期函数里都写一句console.log()，通过控制台观察执行顺序</p>
 </blockquote>
-<h5 id="3-如需其他个性化配置，请点击此处拓展配置链接"><a href="#3-如需其他个性化配置，请点击此处拓展配置链接" class="headerlink" title="3.如需其他个性化配置，请点击此处拓展配置链接"></a>3.如需其他个性化配置，请点击此处<a href="https://www.jianshu.com/p/9f0e90cc32c2" target="_blank" rel="noopener">拓展配置链接</a></h5><blockquote>
+<h2 id="Initialzation阶段"><a href="#Initialzation阶段" class="headerlink" title="Initialzation阶段"></a>Initialzation阶段</h2><blockquote>
+<p>初始化阶段，初始化props 和 state</p>
 </blockquote>
+<p>每个组件都有一个constructor构造函数，这就是Initialzation阶段啦，意为初始化。constructor函数，在组件一被创建的时候，就被自动调用了，所以它是生命周期函数。</p>
+<h2 id="Mounting阶段"><a href="#Mounting阶段" class="headerlink" title="Mounting阶段"></a>Mounting阶段</h2><blockquote>
+<p>Mounting就是挂载的意思。初始化后，一个组件需要被渲染，然后挂载到页面之上。</p>
+</blockquote>
+<p><img src="/2019/01/18/react生命周期函数/2.gif" alt="Image text"></p>
+<h3 id="componentWillMount"><a href="#componentWillMount" class="headerlink" title="componentWillMount"></a>componentWillMount</h3><p>在组件被<strong>挂载</strong>到页面<strong>之前</strong>自动执行</p>
+<h3 id="render"><a href="#render" class="headerlink" title="render"></a>render</h3><p>组件渲染并<strong>挂载</strong>到页面<strong>之上</strong>时自动执行</p>
+<h3 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount"></a>componentDidMount</h3><p>在组件被<strong>挂载</strong>到页面<strong>之后</strong>自动执行</p>
+<blockquote>
+<p><font color="#A52A2A" size="3">注意！</font><br>componentWillMount和componentDidMount只在组件第一次被挂载的时候执行一次。如下图所示，当我们再次输入内容，只有render函数执行。</p>
+</blockquote>
+<p><img src="/2019/01/18/react生命周期函数/3.gif" alt="Image text"></p>
+<h2 id="updation阶段"><a href="#updation阶段" class="headerlink" title="updation阶段"></a>updation阶段</h2><blockquote>
+<p>updation意为更新，指state或者props发生变化。如一开始的生命周期函数图所示，props和state对应的生命周期函数，唯一的不同就是props多了一个componentWillReceiveProps，其他都一样。我们先讲它们共同的生命周期函数</p>
+</blockquote>
+<h3 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate"></a>shouldComponentUpdate</h3><p>组件被<strong>更新之前</strong>，自动执行。shouldComponentUpdate可被理解为“shouldComponentUpdate？”，“组件应该被更新吗？”。它要求必须返回一个布尔值，返回true,则允许组件被更新，返回false，则禁止组件被更新，同时不会执行它下面的关于更新的生命周期函数。</p>
+<h3 id="componentWillUpdate"><a href="#componentWillUpdate" class="headerlink" title="componentWillUpdate"></a>componentWillUpdate</h3><p>组件被<strong>更新之前</strong>，自动执行，但顺序位于shouldComponentUpdate之后</p>
+<h3 id="render-1"><a href="#render-1" class="headerlink" title="render"></a>render</h3><p>重新渲染虚拟DOM，更新页面</p>
+<h3 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate"></a>componentDidUpdate</h3><p>组件被<strong>更新之后</strong>，会自动被执行</p>
+<h3 id="componentWillReceiveProps"><a href="#componentWillReceiveProps" class="headerlink" title="componentWillReceiveProps"></a>componentWillReceiveProps</h3><p>这个生命周期函数要被执行，需要满足两个条件</p>
 <ul>
-<li>切换主题</li>
-<li>设置Menu</li>
-<li>初始化对应的Menu文件夹</li>
-<li>设置动态背景</li>
-<li>在右上角或者左上角实现fork me on github</li>
-<li>添加添加RSS</li>
-<li>修改文章内链接文本样式</li>
-<li>修改底部标签样式</li>
-<li>在文章末尾添加“文章结束”标记</li>
-<li>设置头像并设置动画效果</li>
-<li>修改代码块<code></code>自定义样式</li>
-<li>侧边栏社交小图标设置</li>
-<li>主页文章添加阴影效果</li>
-<li>网站底部加上访问量</li>
-<li>添加热度</li>
-<li>网站底部字数统计</li>
-<li>设置网站的图标Favicon</li>
-<li>实现文章统计功能</li>
-<li>添加网页顶部进度加载条</li>
-<li>添加来必力云跟帖功能</li>
-<li>底部隐藏由Hexo强力驱动、主题–NexT.Mist</li>
-<li>去掉底部重复字数统计</li>
-<li>添加jiathis分享</li>
-<li>博文置顶</li>
-<li>修改字体大小</li>
-<li>添加DaoVoice在线联系</li>
-<li>添加底部桃心</li>
-<li>添加侧栏推荐阅读</li>
-<li>在文章底部增加版权信息</li>
-<li>Hexo博客添加站内搜索</li>
-<li>添加外链网易云音乐</li>
+<li>必须从父组件接收props参数</li>
+<li>如果这个组件第一次存在于父组件，不会执行。如果这个组件之前已经存在于父组件，才会执行。<br><img src="/2019/01/18/react生命周期函数/4.gif" alt="Image text"></li>
 </ul>
+<h1 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount"></a>componentWillUnmount</h1><p>组件即将被从页面中剔除的时候，自动执行<br><img src="/2019/01/18/react生命周期函数/5.gif" alt="Image text"></p>
 
       
     </div>
@@ -499,7 +467,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/React/" rel="tag"># React</a>
           
         </div>
       
@@ -512,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/24/你好，Hexo/" rel="next" title="第一篇博客">
-                <i class="fa fa-chevron-left"></i> 第一篇博客
+              <a href="/2018/11/25/Hexo+githubpages搭建个人博客的教程/" rel="next" title="Hexo+githubpages搭建个人博客的教程">
+                <i class="fa fa-chevron-left"></i> Hexo+githubpages搭建个人博客的教程
               </a>
             
           </div>
@@ -522,7 +490,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/18/react生命周期函数/" rel="prev" title="React实现todolist（一）">
+              <a href="/2019/01/18/React实现Todolist/" rel="prev" title="React实现todolist（一）">
                 React实现todolist（一） <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -659,7 +627,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础篇"><span class="nav-number">2.</span> <span class="nav-text">基础篇</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-环境搭建"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">1.环境搭建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-上手操作"><span class="nav-number">2.0.0.0.2.</span> <span class="nav-text">2.上手操作</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#进阶篇"><span class="nav-number">3.</span> <span class="nav-text">进阶篇</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-上手操作"><span class="nav-number">3.0.0.0.1.</span> <span class="nav-text">1.上手操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-关于评论系统"><span class="nav-number">3.0.0.0.2.</span> <span class="nav-text">2.关于评论系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-如需其他个性化配置，请点击此处拓展配置链接"><span class="nav-number">3.0.0.0.3.</span> <span class="nav-text">3.如需其他个性化配置，请点击此处拓展配置链接</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#生命周期函数定义"><span class="nav-number">1.</span> <span class="nav-text">生命周期函数定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生命周期函数都有哪些？"><span class="nav-number">2.</span> <span class="nav-text">生命周期函数都有哪些？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化Todolist代码，拆分组件"><span class="nav-number">3.</span> <span class="nav-text">优化Todolist代码，拆分组件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生命周期函数详解"><span class="nav-number">4.</span> <span class="nav-text">生命周期函数详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Initialzation阶段"><span class="nav-number">4.1.</span> <span class="nav-text">Initialzation阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mounting阶段"><span class="nav-number">4.2.</span> <span class="nav-text">Mounting阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#componentWillMount"><span class="nav-number">4.2.1.</span> <span class="nav-text">componentWillMount</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#render"><span class="nav-number">4.2.2.</span> <span class="nav-text">render</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#componentDidMount"><span class="nav-number">4.2.3.</span> <span class="nav-text">componentDidMount</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#updation阶段"><span class="nav-number">4.3.</span> <span class="nav-text">updation阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#shouldComponentUpdate"><span class="nav-number">4.3.1.</span> <span class="nav-text">shouldComponentUpdate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#componentWillUpdate"><span class="nav-number">4.3.2.</span> <span class="nav-text">componentWillUpdate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#render-1"><span class="nav-number">4.3.3.</span> <span class="nav-text">render</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#componentDidUpdate"><span class="nav-number">4.3.4.</span> <span class="nav-text">componentDidUpdate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#componentWillReceiveProps"><span class="nav-number">4.3.5.</span> <span class="nav-text">componentWillReceiveProps</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#componentWillUnmount"><span class="nav-number">5.</span> <span class="nav-text">componentWillUnmount</span></a></li></ol></div>
             
 
           </div>
